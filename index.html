@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A & F IND. DEPORTIVA - Catálogo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- ====== Favicon ====== -->
+  <link rel="shortcut icon" href="../img/icon-f&a.jpg" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <h1>A & F IND. DEPORTIVA</h1>
+  </header>
+
+  <main>
+    <!-- Contenedor para los botones de filtro -->
+    <div id="filterButtons" class="filter-buttons"></div>
+    <div id="productCatalog" class="catalog"></div>
+  </main>
+
+  <footer>
+    <p>Contacto: <a href="https://www.facebook.com/profile.php?id=100075984971986" target="_blank">A & F IND. DEPORTIVA </a> | Tel: 3865 574367</p>
+  </footer>
+
+  <!-- Modal para mostrar el detalle del producto -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Imagen del producto">
+        <div class="modal-details">
+          <h3 id="modalName"></h3>
+          <p id="modalBrand"></p>
+          <p id="modalPrice"></p>
+          <p id="modalSizes"></p>
+          <p id="modalColors"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/catalog.js"></script>
+</body>
+</html>

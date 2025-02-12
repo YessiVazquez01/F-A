@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A & F IND. DEPORTIVA</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- ====== Favicon ====== -->
+  <link rel="shortcut icon" href="../img/icon-f&a.jpg" type="image/x-icon">
+</head>
+<body>
+  <div class="login-container">
+    <h1>A & F IND. DEPORTIVA</h1>
+    <div id="loginFormContainer">
+      <form id="loginForm">
+        <label>
+          Usuario:
+          <input type="text" id="loginUsername" required>
+        </label>
+        <label>
+          Contraseña:
+          <input type="password" id="loginPassword" required>
+        </label>
+        <button type="submit">Ingresar</button>
+      </form>
+      <p>¿No tienes una cuenta? <a href="#" id="showRegister">Registrarse</a></p>
+    </div>
+    <div id="registerFormContainer" style="display: none;">
+      <form id="registerForm">
+        <label>
+          Usuario:
+          <input type="text" id="registerUsername" required>
+        </label>
+        <label>
+          Contraseña:
+          <input type="password" id="registerPassword" required>
+        </label>
+        <button type="submit">Registrarse</button>
+      </form>
+      <p>¿Ya tienes una cuenta? <a href="#" id="showLogin">Iniciar sesión</a></p>
+    </div>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+</html>

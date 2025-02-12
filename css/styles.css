@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@200..800&family=Marcellus&family=Pochaevsk&display=swap');
+
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #00a192;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-family: "Pochaevsk", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  nav {
+    margin-top: 10px;
+  }
+  
+  main {
+    padding: 20px;
+    margin-bottom: 60px; /* Espacio para separar del footer */
+  }
+  
+  /* Filtro por botones centrado */
+  .filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons button {
+    margin: 0 5px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #385766;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .filter-buttons button:hover {
+    background-color: #488092;
+  }
+  
+  /* Catálogo de productos */
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .catalog h3{
+    font-family: "Pochaevsk", serif;
+    font-weight: 700;
+    font-size: 1.4em;
+    font-style: normal;
+    margin: 0.3em;
+  }
+
+  .catalog p {
+    font-family: "Pochaevsk", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: auto;
+  }
+  
+  .catalog .product {
+    border: 1px solid #96bfca;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+  
+  /* Cuando se muestra un solo producto, limitar el ancho del contenedor */
+  .catalog .product.single-product {
+    max-width: 250px; /* Ajusta este valor según lo necesites */
+    margin: 0 auto;
+  }
+  
+  .catalog .product img {
+    width: 100%;
+    /* Forzar que la imagen sea cuadrada */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  
+  /* Opcional: estilos específicos para la imagen en modo single-product */
+  .single-product-image {
+    max-width: 480px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Formulario del panel de administración */
+  #productForm h2 {
+    text-align: center;
+  }
+  #productForm form {
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  #productForm form label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  #productForm form input[type="text"],
+  #productForm form input[type="number"],
+  #productForm form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+  
+  /* Tabla de inventario */
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: center;
+  }
+
+  /* Estilos simples para el login */
+  .login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #c1dae0;
+    text-align: center;
+  }
+  .login-container h1 {
+    margin-bottom: 20px;
+    font-family: "Pochaevsk", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .login-container form label {
+    text-align: left;
+  }
+  .login-container form input {
+    padding: 8px;
+    font-size: 1em;
+    width: 100%;
+  }
+  .login-container form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .login-container p {
+    margin-top: 15px;
+  }
+  .login-container a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #087457;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer p {
+    font-family: "Pochaevsk", serif;
+    font-weight: 400;
+    font-size: 1.3em;
+    font-style: normal;
+    margin: auto;
+  }
+
+  footer a {
+    color: white; /* Cambia el color del enlace a blanco */
+    text-decoration: none; /* Quita el subrayado */
+  }
+
+  footer a:hover {
+    color: lightgray; /* Opcional: cambia el color al pasar el mouse */
+  }
+
+  /* Estilos para el Modal de detalle del producto */
+  .modal {
+    display: none; /* Se oculta por defecto */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7); /* Fondo semitransparente */
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 5px;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-body img {
+    width: 300px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .modal-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  /* Centra horizontalmente */
+    text-align: center;   /* Centra el texto */
+    margin-left: 20px;    /* Separa los datos de la imagen */
+  }
+
+  .modal-details h3 {
+    margin-top: 0;
+    font-family: "Pochaevsk", serif;
+    font-weight: 700;
+    font-size: 1.8em;
+    font-style: normal;
+    margin: 0.3em;
+  }
+
+  .modal-details p{
+    font-family: "Pochaevsk", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3em;
+    margin: auto;
+  }
+
+  /* Media Queries para pantallas pequeñas */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.5em;
+    }
+    
+    nav a {
+      font-size: 0.9em;
+    }
+    
+    main {
+      padding: 10px;
+    }
+    
+    .filter-buttons button {
+      padding: 6px 12px;
+      margin: 0 3px;
+      font-size: 0.9em;
+    }
+    
+    .catalog {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    #productForm form {
+      width: 90%;
+      padding: 10px;
+    }
+    
+    th, td {
+      padding: 6px;
+      font-size: 0.9em;
+    }
+  }
+  

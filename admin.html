@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración - A & F IND. DEPORTIVA</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- ====== Favicon ====== -->
+  <link rel="shortcut icon" href="../img/icon-f&a.jpg" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <h1>Panel de Administración</h1>
+    <nav>
+      <!-- Botón para cerrar sesión -->
+      <button id="logoutBtn" style="background: #f44336; color: white; border: none; padding: 8px 12px; cursor: pointer;">Cerrar Sesión</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección para administrar productos -->
+    <section id="productForm">
+      <h2>Agregar / Editar Producto</h2>
+      <form id="formProduct">
+        <!-- Campo oculto para el id (para edición) -->
+        <input type="hidden" id="productId">
+        <label>
+          Nombre:
+          <input type="text" id="name" required>
+        </label>
+        <label>
+          Marca:
+          <input type="text" id="brand" required>
+        </label>
+        <label>
+          Tallas (separadas por coma):
+          <input type="text" id="sizes" placeholder="S, M, L, XL">
+        </label>
+        <label>
+          Colores (separados por coma):
+          <input type="text" id="colors" placeholder="Rojo, Azul, Negro">
+        </label>
+        <label>
+          Precio:
+          <input type="number" id="price" required>
+        </label>
+        <label>
+          Imagen:
+          <input type="file" id="imageFile" accept="image/*">
+        </label>
+        <!-- Campo oculto para mantener la imagen actual en modo edición -->
+        <input type="hidden" id="currentImage">
+        <button type="submit" id="saveBtn">Guardar Producto</button>
+        <button type="button" id="cancelEdit" style="display:none;">Cancelar</button>
+      </form>
+    </section>
+
+    <!-- Inventario de productos -->
+    <section id="inventory">
+      <h2>Inventario de Productos</h2>
+      <div class="table-container">
+        <table id="inventoryTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Marca</th>
+              <th>Tallas</th>
+              <th>Colores</th>
+              <th>Precio</th>
+              <th>Imagen</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Se llenarán dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sección para gestionar usuarios (visible solo para administradores) -->
+    <section id="userManagement">
+      <h2>Gestión de Usuarios</h2>
+      <div class="table-container">
+        <table id="userTable">
+          <thead>
+            <tr>
+              <th>Usuario</th>
+              <th>Rol</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Se llenarán dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>A & F IND. DEPORTIVA</p>
+  </footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
