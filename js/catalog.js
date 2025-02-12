@@ -1,25 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Obtener o inicializar productos en localStorage (incluyendo tallas y colores)
-  let products = JSON.parse(localStorage.getItem('products')) || [
-    {
-      id: 1,
-      name: "Camiseta Deportiva",
-      brand: "Adidas",
-      price: 5000,
-      image: "../img/IMG-20240323-WA0128.jpg",
-      sizes: ["S", "M", "L", "XL"],
-      colors: ["Rojo", "Azul", "Negro"]
-    },
-    {
-      id: 2,
-      name: "Pantalón Deportivo",
-      brand: "Nike",
-      price: 12000,
-      image: "../img/IMG-20240323-WA0150.jpg",
-      sizes: ["M", "L", "XL"],
-      colors: ["Gris", "Negro"]
-    }
-  ];
+  let products = JSON.parse(localStorage.getItem('products')) || [];
 
   // Guardar en localStorage (en caso de inicialización)
   localStorage.setItem('products', JSON.stringify(products));
